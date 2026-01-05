@@ -1,0 +1,17 @@
+torch
+torchvision
+ultralytics
+rasterio
+pillow
+numpy
+opencv-python
+tqdm
+shapely
+geojson
+flask
+matplotlib
+scipy
+scikit-image
+tifffile
+geopandas
+pyproj

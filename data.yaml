@@ -1,0 +1,5 @@
+train: C:\Users\GeoSpectral\Desktop\Train Geofield\Geo-Uniclase\dataset\images\train
+val: C:\Users\GeoSpectral\Desktop\Train Geofield\Geo-Uniclase\dataset\images\val
+
+nc: 1
+names: ['Agave']

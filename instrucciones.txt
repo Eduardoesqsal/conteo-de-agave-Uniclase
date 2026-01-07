@@ -22,7 +22,7 @@ cd C:\Users\TuUsuario\Desktop\NombreDelProyecto
 
 4. Activar el entorno virtual
 - Ejecuta:
-  BEMP\Scripts\activate
+  venv\Scripts\activate
 
 - Si se activó correctamente, aparecerá (venv) al inicio de la línea de la consola
 
@@ -34,3 +34,4 @@ cd C:\Users\TuUsuario\Desktop\NombreDelProyecto
 6. Ejecutar el script
 - Ejecuta el archivo Python con:
   python count.py
+

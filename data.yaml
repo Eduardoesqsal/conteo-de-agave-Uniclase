@@ -1,5 +1,6 @@
-train: C:\Users\GeoSpectral\Desktop\Train Geofield\Geo-Uniclase\dataset\images\train
-val: C:\Users\GeoSpectral\Desktop\Train Geofield\Geo-Uniclase\dataset\images\val
+train: # ruta del conjunto de datos train
+val: # ruta del conjunto de datos de validacion 
 
 nc: 1
 names: ['Agave']
+

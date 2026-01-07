@@ -13,8 +13,8 @@ import os
 # ==========================
 # CONFIG MAXIMA DETECCION
 # ==========================
-MODEL_PATH = r"C:\Users\GeoSpectral\Desktop\Train Geofield\Geo-Uniclase\Geoespectral_modelo\GSD-FIX-1024\weights\best.pt"
-ORTOMOSAICO_PATH = r"C:\Users\GeoSpectral\Desktop\Train Geofield\mosaicos\pruebas\LAS 100 - LA TABLA 1 ORT.tif"
+MODEL_PATH = # ruta del modelo
+ORTOMOSAICO_PATH = # ruta del aerchivo
 
 ORTO_NAME = os.path.basename(ORTOMOSAICO_PATH)
 
@@ -154,3 +154,4 @@ seconds = int(elapsed_time % 60)
 print(f"tiempo total de ejecucion : {hours}h {minutes}m {seconds}s")
 
 print("Proceso completado.")
+

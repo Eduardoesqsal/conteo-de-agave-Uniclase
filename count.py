@@ -6,12 +6,17 @@ import geopandas as gpd
 from shapely.geometry import Point
 from rasterio.windows import Window
 import torch
+import time #para contar tiempo de ejecucion
+import os
+
 
 # ==========================
 # CONFIG MAXIMA DETECCION
 # ==========================
 MODEL_PATH = r"C:\Users\GeoSpectral\Desktop\Train Geofield\Geo-Uniclase\Geoespectral_modelo\GSD-FIX-1024\weights\best.pt"
-ORTOMOSAICO_PATH = r"C:\Users\GeoSpectral\Desktop\Train Geofield\mosaicos\pruebas\ANA MARÍA - EL FRIJOL 08-08-2025 ORT.tif"
+ORTOMOSAICO_PATH = r"C:\Users\GeoSpectral\Desktop\Train Geofield\mosaicos\pruebas\LAS 100 - LA TABLA 1 ORT.tif"
+
+ORTO_NAME = os.path.basename(ORTOMOSAICO_PATH)
 
 TILE_SIZE = 1024
 CORE_SIZE = 896
@@ -30,6 +35,10 @@ DEVICE = 0 if torch.cuda.is_available() else "cpu"
 
 # ==========================
 print("Cargando modelo...")
+print(f"Nombre del ortomosaico: {ORTO_NAME}")
+
+star_time = time.time() #iniciando conteo
+
 model = YOLO(MODEL_PATH)
 print(f"Usando dispositivo: {DEVICE}")
 
@@ -130,4 +139,18 @@ gdf = gpd.GeoDataFrame(
 
 gdf.to_file(OUTPUT_SHP)
 print(f"Shapefile guardado: {OUTPUT_SHP}")
+
+# ==========================
+# Tiempo total
+# ========================== 
+
+end_time = time.time()
+elapsed_time = end_time - star_time
+
+hours = int(elapsed_time // 3600)
+minutes = int((elapsed_time % 3600) //60)
+seconds = int(elapsed_time % 60)
+
+print(f"tiempo total de ejecucion : {hours}h {minutes}m {seconds}s")
+
 print("Proceso completado.")
